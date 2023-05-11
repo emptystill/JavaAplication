@@ -6,6 +6,11 @@ pipeline {
     maven 'Maven_3.1.1'
   }
 
+  environment {
+    // Configurar la URL de Maven para utilizar HTTPS
+    MAVEN_OPTS = "-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+  }
+
   stages {
     stage('Checkout') {
       steps {
@@ -15,8 +20,10 @@ pipeline {
 
     stage('Build') {
       steps {
-        // Ejecuta el comando Maven con la versión especificada
-        sh 'mvn clean package'
+        // Configurar el entorno para la construcción con Maven
+        withMaven(maven: 'Maven_3.1.1') {
+          sh 'mvn clean package'
+        }
       }
     }
 
