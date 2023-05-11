@@ -7,8 +7,8 @@ pipeline {
   }
 
   environment {
-    // Configurar la URL de Maven para utilizar HTTPS
-    MAVEN_OPTS = "-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+    MAVEN_OPTS = '-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
+    GIT_SSL_NO_VERIFY = 'true'
   }
 
   stages {
