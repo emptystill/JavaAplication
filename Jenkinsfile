@@ -1,25 +1,29 @@
 pipeline {
   agent any
 
+  tools {
+    // Especifica la versión de Maven
+    maven 'Maven_3.8.4'
+  }
+
   stages {
     stage('Checkout') {
       steps {
-        // Clonar el repositorio
-        git 'https://github.com/emptystill/JavaAplication'
+        checkout scm
       }
     }
 
     stage('Build') {
       steps {
-        // Compilar la aplicación
+        // Ejecuta el comando Maven con la versión especificada
         sh 'mvn clean package'
       }
     }
 
     stage('Static Code Analysis') {
       steps {
-        // Ejecutar SonarQube Scanner para el análisis estático
-        withSonarQubeEnv('SonarQube Server') {
+        // Ejecuta el análisis estático del código con SonarQube
+        withSonarQubeEnv('SonarQube') {
           sh 'mvn sonar:sonar'
         }
       }
