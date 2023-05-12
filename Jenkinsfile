@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Ejecuta el comando Maven con la versión especificada
-                sh 'mvn clean package -Dmaven.wagon.http.ssl.protocols=TLSv1.2 -Dmaven.wagon.http.ssl.configurations=protocols'
+                bat 'mvn clean package -Dmaven.wagon.http.ssl.protocols=TLSv1.2 -Dmaven.wagon.http.ssl.configurations=protocols'
             }
         }
         
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 // Ejecuta el análisis estático del código con SonarQube
                 withSonarQubeEnv('SonarQube') {
-                    sh 'mvn sonar:sonar'
+                    bat 'mvn sonar:sonar'
                 }
             }
         }
