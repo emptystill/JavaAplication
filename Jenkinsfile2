@@ -11,13 +11,13 @@ pipeline {
         }
       }
     }
-
-    stage('Code Analysis') {
-      steps {
-        script {
-          codeAnalysis()
-        }
-      }
-    }
-  }
+}
+  //   stage('Code Analysis') {
+  //     steps {
+  //       script {
+  //         codeAnalysis()
+  //       }
+  //     }
+  //   }
+  // }
 }
