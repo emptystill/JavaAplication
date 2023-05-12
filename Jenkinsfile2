@@ -1,4 +1,4 @@
-@Library('devops') _
+@Library('devops@main')
 
 // def buildPipeline() {
 //   // Lógica para construir el pipeline
