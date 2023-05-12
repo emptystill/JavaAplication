@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Ejecuta el comando Maven con la versión especificada
-                sh 'mvn clean package'
+                sh 'mvn clean package -Dmaven.wagon.http.ssl.protocols=TLSv1.2 -Dmaven.wagon.http.ssl.configurations=protocols'
             }
         }
         
