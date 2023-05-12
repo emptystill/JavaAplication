@@ -1,12 +1,12 @@
 @Library('devops') _
 
-def buildPipeline() {
-  // Lógica para construir el pipeline
-}
+// def buildPipeline() {
+//   // Lógica para construir el pipeline
+// }
 
-def codeAnalysis() {
-  // Lógica para el análisis de código
-}
+// def codeAnalysis() {
+//   // Lógica para el análisis de código
+// }
 
 pipeline {
   agent any
