@@ -1,4 +1,4 @@
-@Library(['build@main', 'codeAnalysis@main']) _
+@Library(['buildPipeline@main', 'codeAnalysis@main']) _
 
 pipeline {
   agent any
@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          build.buildPipeline()
+          buildPipeline.buildPipeline()
         }
       }
     }
