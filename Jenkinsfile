@@ -1,7 +1,7 @@
 @Library(['devops@main']) _
 
-import buildPipeline.Library as BuildPipeline
-import codeAnalysis.Library as CodeAnalysis
+import buildPipeline.groovy as BuildPipeline
+import codeAnalysis.groovy as CodeAnalysis
 
 pipeline {
   agent any
