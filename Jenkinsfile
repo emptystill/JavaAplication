@@ -1,4 +1,7 @@
-@Library(['buildPipeline@main', 'codeAnalysis@main']) _
+@Library(['buildPipeline@main', 'codeAnalysis@main'])
+
+import buildPipeline.Library as BuildPipeline
+import codeAnalysis.Library as CodeAnalysis
 
 pipeline {
   agent any
@@ -7,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          buildPipeline.buildPipeline()
+          BuildPipeline.buildPipeline()
         }
       }
     }
@@ -15,7 +18,7 @@ pipeline {
     stage('Code Analysis') {
       steps {
         script {
-          codeAnalysis.codeAnalysis()
+          CodeAnalysis.codeAnalysis()
         }
       }
     }
