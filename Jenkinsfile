@@ -1,7 +1,7 @@
-@Library(['build@main', 'codeAnalysis@main'])
+@Library(['devops@main']) _
 
-import buildPipeline.Library as BuildPipeline
-import codeAnalysis.Library as CodeAnalysis
+import devops.buildPipeline.Library as BuildPipeline
+import devops.codeAnalysis.Library as CodeAnalysis
 
 pipeline {
   agent any
