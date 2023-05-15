@@ -1,7 +1,7 @@
 @Library('devops@main') _
 
 // agent any
-def call() {
+def myFunction() {
   stages {
     stage('Build') {
       steps {
@@ -20,3 +20,4 @@ def call() {
     }
   }
 }
+myFunction()
