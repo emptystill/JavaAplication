@@ -6,13 +6,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        buildPipeline()
+        script {
+          buildLibrary.buildPipeline()
+        }
       }
     }
 
     stage('Code Analysis') {
       steps {
-        codeAnalysis()
+        script {
+          codeAnalysisLibrary.codeAnalysis()
+        }
       }
     }
   }
