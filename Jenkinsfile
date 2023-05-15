@@ -1,4 +1,4 @@
-@Library(['build@main', 'codeAnalysis@main'])
+@Library(['build', 'codeAnalysis'])
 
 import buildPipeline.Library as BuildPipeline
 import codeAnalysis.Library as CodeAnalysis
