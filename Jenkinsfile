@@ -1,5 +1,4 @@
-@Library('build-library@main')
-@Library('code-analysis-library@main')
+@Library(['build-library@main', 'code-analysis-library@main']) _
 
 pipeline {
   agent any
