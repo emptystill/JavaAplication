@@ -1,7 +1,4 @@
-@Library(['devops@main']) _
-
-// import buildPipeline.groovy as buildPipeline
-// import codeAnalysis.groovy as codeAnalysis
+@Library(['buildPipeline@main', 'codeAnalysis@main']) _
 
 pipeline {
   agent any
@@ -10,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          buildPipeline.buildPipeline()
+          build.buildPipeline()
         }
       }
     }
