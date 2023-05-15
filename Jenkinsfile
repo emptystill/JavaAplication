@@ -20,4 +20,6 @@ def myFunction() {
     }
   }
 }
-myFunction()
+node {
+  myFunction()
+}
