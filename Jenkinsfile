@@ -7,15 +7,15 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          buildLibrary.buildPipeline()
+          buildlibrary.buildPipeline()
         }
       }
     }
 
-    stage('Code Analysis') {
+    stage('Static Code Analysis') {
       steps {
         script {
-          codeAnalysisLibrary.codeAnalysis()
+          codeanalysislibrary.codeAnalysis()
         }
       }
     }
