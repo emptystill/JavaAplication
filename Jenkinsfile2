@@ -1,4 +1,4 @@
-@Library('emptystill/devops') _
+@Library(['emptystill/devops', 'another-library@main']) _
 
 pipeline {
   agent any
@@ -7,16 +7,14 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          buildPipeline()
+          emptystill.devops.buildPipelineFunction()
         }
       }
     }
 
     stage('Code Analysis') {
       steps {
-        script {
-          codeAnalysis()
-        }
+        anotherLibraryCodeAnalysis()
       }
     }
   }
