@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          buildLibrary.buildPipeline()
+          buildPipeline()
         }
       }
     }
@@ -15,7 +15,7 @@ pipeline {
     stage('Code Analysis') {
       steps {
         script {
-          codeAnalysisLibrary.codeAnalysis()
+          codeAnalysis()
         }
       }
     }
