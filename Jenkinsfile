@@ -1,5 +1,6 @@
 @Library('devops@main') _
 
+def runPipeline() {
 pipeline {
   agent any
 
@@ -21,3 +22,6 @@ pipeline {
     }
   }
 }
+}
+
+runPipeline()
