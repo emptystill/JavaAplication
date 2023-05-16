@@ -7,7 +7,7 @@ pipeline {
     stage('Call Pipeline') {
       steps {
         script {
-          Pipeline.call()
+          call()
         }
       }
     }
