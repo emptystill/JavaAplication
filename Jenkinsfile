@@ -1,15 +1,15 @@
-@Library('emptystill/devops') _
+@Library('devops-library') _
 
 pipeline {
-    agent any
+  agent any
 
-    stages {
-        stage('Call Pipeline') {
-            steps {
-                script {
-                    Pipeline.call()
-                }
-            }
+  stages {
+    stage('Call Pipeline') {
+      steps {
+        script {
+          Pipeline.call()
         }
+      }
     }
+  }
 }
