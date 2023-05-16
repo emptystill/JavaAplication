@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage('CodeAnalysis') {
       steps {
-        codeAnalysis()
+        codeAnalysis(this, 'clean package')
       }
     }
   }
