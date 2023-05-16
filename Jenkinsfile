@@ -5,7 +5,11 @@ pipeline {
 
   stages {
     stage('Call Pipeline') {
-      buildPipeline
+      steps {
+        step('Call lib') {
+          buildPipeline
+        }
+      }
     }
   }
 }
