@@ -9,10 +9,10 @@ pipeline {
         buildPipeline(this, 'clean package')
       }
     }
-  }
-  stage('CodeAnalysis') {
-    steps {
-      codeAnalysis(this, 'clean package')
+    stage('CodeAnalysis') {
+      steps {
+        codeAnalysis(this, 'clean package')
+      }
     }
   }
 }
