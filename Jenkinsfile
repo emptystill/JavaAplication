@@ -1,4 +1,4 @@
-@Library(['build-library' , 'sonarqube-library']) _ 
+@Library(['build-library', 'sonarqube-library']) _
 
 pipeline {
   agent any
@@ -10,11 +10,9 @@ pipeline {
       }
     }
   }
-  stages {
-    stage('CodeAnalysis') {
-      steps {
-        codeAnalysis(this, 'clean package')
-      }
+  stage('CodeAnalysis') {
+    steps {
+      codeAnalysis(this, 'clean package')
     }
   }
 }
