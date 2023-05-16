@@ -7,7 +7,7 @@ pipeline {
     maven 'Maven_3.9.0'
   }
   stages {
-    stage('Call Pipeline') {
+    stage('Build') {
       steps {
         buildPipeline(this, 'clean package')
       }
