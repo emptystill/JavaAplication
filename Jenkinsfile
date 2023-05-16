@@ -6,9 +6,7 @@ pipeline {
   stages {
     stage('Call Pipeline') {
       steps {
-        step('Call lib') {
           buildPipeline
-        }
       }
     }
   }
