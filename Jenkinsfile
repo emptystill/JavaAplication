@@ -5,11 +5,7 @@ pipeline {
 
   stages {
     stage('Call Pipeline') {
-      steps {
-        script {
-          call()
-        }
-      }
+      buildPipeline
     }
   }
 }
