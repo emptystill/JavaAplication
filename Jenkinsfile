@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Call Pipeline') {
       steps {
-          buildPipeline
+          buildPipeline()
       }
     }
   }
