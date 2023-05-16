@@ -1,25 +1,15 @@
-@Library('devops@main') _
+@Library('emptystill/devops') _
 
-// agent any
-def myFunction() {
-  stages {
-    stage('Build') {
-      steps {
-        script {
-          buildPipeline()
-        }
-      }
-    }
+pipeline {
+    agent any
 
-    stage('Code Analysis') {
-      steps {
-        script {
-          codeAnalysis()
+    stages {
+        stage('Call Pipeline') {
+            steps {
+                script {
+                    Pipeline.call()
+                }
+            }
         }
-      }
     }
-  }
-}
-node {
-  myFunction()
 }
