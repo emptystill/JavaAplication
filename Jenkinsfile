@@ -1,15 +1,19 @@
-@Library('build-library') _
+@Library(['build-library' , 'sonarqube-library']) _ 
 
 pipeline {
   agent any
-  // tools {
-    // // Especifica la versión de Maven
-    // maven 'Maven_3.9.0'
-  // }
+
   stages {
     stage('Build') {
       steps {
         buildPipeline(this, 'clean package')
+      }
+    }
+  }
+  stages {
+    stage('CodeAnalysis') {
+      steps {
+        codeAnalysis()
       }
     }
   }
