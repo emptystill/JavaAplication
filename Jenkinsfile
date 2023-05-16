@@ -1,4 +1,4 @@
-@Library('devops-library') _
+@Library('build-library') _
 
 pipeline {
   agent any
