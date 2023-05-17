@@ -16,4 +16,3 @@ pipeline {
     }
   }
 }
-//Jenkinsfile Funcional
