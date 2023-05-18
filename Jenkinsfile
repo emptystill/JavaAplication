@@ -14,5 +14,20 @@ pipeline {
         codeAnalysis(this)
       }
     }
+    stage('DockerBuild') {
+      steps {
+        dockerBuild(this)
+      }  
+    }
+    stage('DockerPush') {
+      steps {
+        dockerPush(this)
+      }  
+    }
+    stage('DockerDeploy') {
+      steps {
+        dockerDeploy(this)
+      }  
+    }
   }
 }
