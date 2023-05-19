@@ -1,4 +1,4 @@
-@Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library']) _
+@Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library', 'dockerdeploy-library']) _
 
 pipeline {
   agent any
@@ -24,10 +24,10 @@ pipeline {
         dockerPush(this)
       }  
     }
-    // stage('DockerDeploy') {
-    //   steps {
-    //     dockerDeploy(this)
-    //   }  
-    // }
+    stage('DockerDeploy') {
+      steps {
+        dockerDeploy(this)
+      }  
+    }
   }
 }
