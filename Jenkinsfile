@@ -1,4 +1,4 @@
-@Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library', 'dockerdeploy-library']) _
+@Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library', 'dockerdeploy-library', 'owaspanalysis-library']) _
 
 pipeline {
   agent any
@@ -27,6 +27,11 @@ pipeline {
     stage('DockerDeploy') {
       steps {
         dockerDeploy(this)
+      }  
+    }
+    stage('OwaspAnalysis') {
+      steps {
+        owaspAnalysis(this)
       }  
     }
   }
