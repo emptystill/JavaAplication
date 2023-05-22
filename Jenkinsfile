@@ -1,4 +1,5 @@
-@Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library', 'dockerdeploy-library', 'owaspanalysis-library']) _
+// @Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library', 'dockerdeploy-library', 'owaspanalysis-library']) _
+@Library('devops@develop')
 
 pipeline {
   agent any
