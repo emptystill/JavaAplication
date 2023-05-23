@@ -1,39 +1,32 @@
-@Library(['build-library', 'sonarqube-library' ,'dockerbuild-library', 'dockerpush-library', 'dockerdeploy-library', 'owaspanalysis-library']) _
-
-
 pipeline {
-  agent any
-
-  stages {
-    stage('Build') {
-      steps {
-        buildPipeline(this, 'clean package')
-      }
+    agent any
+    
+    tools {
+        // Especifica la versión de Maven
+        maven 'Maven_3.9.0'
     }
-    stage('CodeAnalysis') {
-      steps {
-        codeAnalysis(this)
-      }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Ejecuta el comando Maven con la versión especificada
+                bat 'mvn clean package'
+            }
+        }
+        
+        stage('Static Code Analysis') {
+            steps {
+                // Ejecuta el análisis estático del código con SonarQube
+                withSonarQubeEnv('SonarQube') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
     }
-    stage('DockerBuild') {
-      steps {
-        dockerBuild(this)
-      }  
-    }
-    stage('DockerPush') {
-      steps {
-        dockerPush(this)
-      }  
-    }
-    stage('DockerDeploy') {
-      steps {
-        dockerDeploy(this)
-      }  
-    }
-    stage('OwaspAnalysis') {
-      steps {
-        owaspAnalysis(this)
-      }  
-    }
-  }
 }
