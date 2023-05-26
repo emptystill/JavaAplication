@@ -1,3 +1,3 @@
 @Library('devops@main') _
 
-Javapipe(scmUrl: 'https://github.com/emptystill/JavaAplication.git')
+javaPipe(scmUrl: 'https://github.com/emptystill/JavaAplication.git')
