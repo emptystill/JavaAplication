@@ -1,18 +1,3 @@
-@Library(['build-library', 'sonarqube-library']) _
+@Library('devops@main') _
 
-pipeline {
-  agent any
-
-  stages {
-    stage('Build') {
-      steps {
-        buildPipeline(this, 'clean package')
-      }
-    }
-    stage('CodeAnalysis') {
-      steps {
-        codeAnalysis(this)
-      }
-    }
-  }
-}
+pipeline-mvn(scmUrl: 'https://github.com/emptystill/JavaAplication.git')
