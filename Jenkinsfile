@@ -1,4 +1,4 @@
-@Library('devops@main') _
+@Library('devops@develop') _
 
 javaPipe('https://github.com/emptystill/JavaAplication.git')
 
